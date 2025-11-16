@@ -60,8 +60,9 @@ function greet($name){
     echo "hello $name <br>";
 }
 
-greet($yahya);
-greet($mo);
+greet("yahya");
+greet("mo");
+greet("omar");
 
 ?>
 
