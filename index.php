@@ -20,18 +20,18 @@ $ratings = [9, 8, 6, 9, 10];
     };
    
   };
-    function best($movies , $ratings){
+//     function best($movies , $ratings){
 
-     $rate = 0 ;
-     $name = "";
-     for($i = 0 ; $i < count($movies) ; $i++ ){
-      if ($rate < $ratings[$i]){
-         $rate =  $ratings[$i] ;
-         $name = $movies[$i];
-      }
-  }
-   return $name ;
-    }
+//      $rate = 0 ;
+//      $name = "";
+//      for($i = 0 ; $i < count($movies) ; $i++ ){
+//       if ($rate < $ratings[$i]){
+//          $rate =  $ratings[$i] ;
+//          $name = $movies[$i];
+//       }
+//   }
+//    return $name ;
+//     }
   
   function average($ratings){
      
@@ -43,7 +43,9 @@ $ratings = [9, 8, 6, 9, 10];
      return $total / count($ratings);
   }
 $averageRating = average($ratings);
-$bestMovie = best($movies , $ratings);
+$bestRating = max($ratings);
+$bestIndex = array_search($bestRating , $ratings); // returnes the $bestRating index in the ratingsn array 
+$bestMovie = $movies[$bestIndex];
 
  
 
