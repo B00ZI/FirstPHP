@@ -1,72 +1,59 @@
 <?php
 
-echo "<H1> NOTER </H1>";
-
-$name="yahya";
-$age=22;
-$height=1.72;
-$likesCoffe = true;
-
-echo "<p> my name " . $name  . "im " . $age ." years old im  " . $height ."m  tall and do i like cooffe : " . ($likesCoffe ? "true" : "false") . "</p>";
+$movies = ["Inception", "Avatar", "Titanic", "The Matrix", "Interstellar"];
+$ratings = [9, 8, 6, 9, 10];
 
 
-// $score = 10 ;
-
-// if ($score == 10){
-//      echo "perfect";
-// } elseif($score >= 8){
-//     echo "good";
-// }elseif($score >= 5){
-//     echo "not bad";
-// }else{
-//     echo "bad ";
-// };
-
-echo "<br>" ;
-echo "<br>" ;
-
-// for($i = 1 ; $i <= 20 ; $i++ ){
-//     echo " $i <br>";
-// };
-
-// $x= 1 ;
-
-// echo "<br>" ;
-// echo "<br>" ;
-
-// while($x <= 30){
-    
-//     if($x % 2 == 0){
-//         echo $x . "<br>" ;
-//         $x++ ;
-//     } else{
-//     $x++ ;
-//     }
-// };
 
 
-// $fruits = ["apple", "banana", "orange", "mango", "grape"];
 
-// echo "first in list: " . $fruits[0] . "<br>";
-// echo "last in list: " .  $fruits[count($fruits)-1] . "<br>";
-// echo "<br>";
+  function listm($movies , $ratings){
+    for($i = 0 ; $i < count($movies) ; $i++ ){
+       if ($ratings[$i] >= 9){
+       echo   $movies[$i] . " - " . $ratings[$i] . " - Excellent <br>" ;
+       }elseif($ratings[$i] >= 7){
+       echo   $movies[$i] . " - " . $ratings[$i] . " - Good <br>" ;
+       }else{
+       echo   $movies[$i] . " - " . $ratings[$i] . " - Needs improvement <br>" ;
 
-// foreach($fruits as $fruit){
-//     echo $fruit . "<br>";
-// }
+       }
+    };
+   
+  };
+    function best($movies , $ratings){
+
+     $rate = 0 ;
+     $name = "";
+     for($i = 0 ; $i < count($movies) ; $i++ ){
+      if ($rate < $ratings[$i]){
+         $rate =  $ratings[$i] ;
+         $name = $movies[$i];
+      }
+  }
+   return $name ;
+    }
+  
+  function average($ratings){
+     
+     $total = 0 ;
+     foreach($ratings as $rate ){
+      $total += $rate ;
+     }
+
+     return $total / count($ratings);
+  }
+$averageRating = average($ratings);
+$bestMovie = best($movies , $ratings);
+
+ 
 
 
-function greet($name){
-    echo "hello $name <br>";
-}
 
-greet("yahya");
-greet("mo");
-greet("omar");
+
+echo "<h1>Mini Project: Movie Ratings Tracker</h1>" ;
+listm($movies , $ratings);
+echo "<br>";
+echo "<b> Average rating: ".$averageRating  . "</b> <br>";
+echo "<b> Best Movie: ".$bestMovie  . "</b>";
 
 ?>
-
-
-
-
-
