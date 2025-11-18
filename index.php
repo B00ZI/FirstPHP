@@ -52,6 +52,7 @@ $bestMovie = $movies[$bestIndex];
 
 
 
+
 echo "<h1>Mini Project: Movie Ratings Tracker</h1>" ;
 listm($movies , $ratings);
 echo "<br>";
@@ -60,5 +61,7 @@ echo "<b> Best Movie: ".$bestMovie  . "</b> <br>"  ;
 
 echo gettype($averageRating)  ;//to get type of a var 
 
+ $multyRatting = array_map(fn($n)=> $n * 2 . "<br>" , $ratings);
+ print_r($multyRatting) 
 
 ?>
