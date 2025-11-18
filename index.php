@@ -56,6 +56,9 @@ echo "<h1>Mini Project: Movie Ratings Tracker</h1>" ;
 listm($movies , $ratings);
 echo "<br>";
 echo "<b> Average rating: ".$averageRating  . "</b> <br>";
-echo "<b> Best Movie: ".$bestMovie  . "</b>";
+echo "<b> Best Movie: ".$bestMovie  . "</b> <br>"  ;
+
+echo gettype($averageRating)  ;//to get type of a var 
+
 
 ?>
